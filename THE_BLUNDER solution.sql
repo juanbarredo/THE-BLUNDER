@@ -74,3 +74,33 @@ SELECT AVG(Salary)
 
 --so, now I have to find a way to remove any zeroes.
 
+-------------------------10 06 2024-----------------------------
+
+--ok,
+
+--The next step as I see it now 
+--is to remove the zeroes from the salary column
+--but
+--this will change things drastically
+
+--for instance,
+--how does Britney's salary go from
+--9009 to 99?
+
+--I am looking into it and it seems way
+--too complicated
+
+--is there really no way to simply replace numbers
+--numbers that are in INT format.
+
+--this is really a bad awkward thing.
+
+--I need to - apparently - change the data type
+--change the data type to VARCHAR first?
+
+--seems really longwinded
+
+--somthing I have to change to myself.
+
+--I found some articles on SQLSHACK
+--that I will try to read
