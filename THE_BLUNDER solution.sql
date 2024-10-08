@@ -9,9 +9,9 @@
 --			I currently believe that subqueries 
 --			willl be an exception.
 
-use the_blunder;
-SELECT *
-	FROM employees;
+--use the_blunder;
+--SELECT *
+--	FROM employees;
 
 --ok, my use of the import export wizard worked.
 
@@ -49,9 +49,9 @@ SELECT *
 --yes there is.
 --AVG()
 
-USE the_blunder;
-SELECT AVG(Salary)
-	FROM employees;
+--USE the_blunder;
+--SELECT AVG(Salary)
+--	FROM employees;
 
 --ok, I think I captured the first part
 --as I understand the problem at the moment.
@@ -104,3 +104,62 @@ SELECT AVG(Salary)
 
 --I found some articles on SQLSHACK
 --that I will try to read
+
+---------------------10 07 2024--------------------------
+
+--ok,
+
+--So, I need to look at CAST vs CONVERT
+
+--Sees generally speaking that I should use CAST
+--unless I am interested in specific cases.
+
+--for my first example then,
+--I need to CAST the column 'Salary' into VARCHAR
+--to then strip out the '0'/zeroes.
+
+---------CAST ( expression AS data_type [ ( length ) ] )
+
+USE the_blunder;
+SELECT CAST( Salary AS varchar)
+	FROM employees;
+
+--USE the_blunder;
+--SELECT *
+--	FROM employees;
+
+--Everything looks good
+--but let me test by doing the avg function
+--it should give me an error
+
+USE the_blunder;
+SELECT AVG(Salary)
+	FROM employees;
+
+--it didn't give me the error
+--I was expecting
+
+--does CAST only work within the query
+--being executed
+--so, it
+
+--yeah, I think so
+--how interesting.
+
+--I would have to write the 
+--query in mind to finish out 
+--the operation I wanted.
+
+--I don't have the bandwith to do that now
+--but next time
+--I will try to use a subquery.
+
+--might that work?
+
+--although, I think I saw an answer online
+--that is compound.
+--seems kind of out of my style
+--at this point.
+
+--I want to try to do a subquery about it.
+
