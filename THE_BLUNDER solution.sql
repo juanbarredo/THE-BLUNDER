@@ -120,9 +120,9 @@
 
 ---------CAST ( expression AS data_type [ ( length ) ] )
 
-USE the_blunder;
-SELECT CAST( Salary AS varchar)
-	FROM employees;
+--USE the_blunder;
+--SELECT CAST( Salary AS varchar)
+--	FROM employees;
 
 --USE the_blunder;
 --SELECT *
@@ -132,9 +132,9 @@ SELECT CAST( Salary AS varchar)
 --but let me test by doing the avg function
 --it should give me an error
 
-USE the_blunder;
-SELECT AVG(Salary)
-	FROM employees;
+--USE the_blunder;
+--SELECT AVG(Salary)
+--	FROM employees;
 
 --it didn't give me the error
 --I was expecting
@@ -162,4 +162,50 @@ SELECT AVG(Salary)
 --at this point.
 
 --I want to try to do a subquery about it.
+
+-------------------10 10 2024---------------------
+
+--ok,
+--today I need to look at how to do casting in what I believe is a subquery.
+
+--But I saw online a way to do it all in the SELECT statement.
+
+--USE the_blunder;
+--SELECT *
+--	FROM employees;
+
+--USE the_blunder;
+--SELECT CAST(Salary AS varchar)
+--	FROM employees 
+
+--ok, from here.  I am unsure how to change but I would need to change that.
+--right, lines 178 - 179 are the subquery.
+--the main query would delete the zeroes.
+
+--ok, I need to find the next step then.
+--the next step is how to change.
+--ok, it looks like I will need to use the REPLACE function.
+
+--------REPLACE(string, old_string, new_string)
+
+--but this is only if we know the exact string.
+--I need to replace zeroes in every row within a column.
+--so, replace doesn't use an expression.
+--
+
+--I am at a loss
+
+--this is where having amore nuanced understanding of
+--how SQL processes rows and columns.
+
+--I feel I need to go back and understand
+--ok,
+
+--I changed my question on a google search and got the idea to use the 
+--UPDATE statement?
+--I would never have thought of that at this stage.
+
+-------SELECT REPLACE([somecolumn], 'somestring', '') AS [somecolumn] FROM [sometable]
+
+--I will keep working on this Sunday.
 
