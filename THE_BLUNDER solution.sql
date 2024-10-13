@@ -195,7 +195,7 @@
 
 --I am at a loss
 
---this is where having amore nuanced understanding of
+--this is where having a more nuanced understanding of
 --how SQL processes rows and columns.
 
 --I feel I need to go back and understand
@@ -208,4 +208,30 @@
 -------SELECT REPLACE([somecolumn], 'somestring', '') AS [somecolumn] FROM [sometable]
 
 --I will keep working on this Sunday.
+
+-----------------------------10 13 2024--------------------------------
+
+--I am now looking at the UPDATE statement but I don't think it will work.
+
+--interesting, the book doesn't have the REPLACE function.
+--but it does have something, right?
+--I remember it covering how to do something like it but I can't find it now.
+
+--------------REPLACE ( column_name , string_expression , string_patter , string_replacement )
+
+USE the_blunder;
+SELECT REPLACE(Salary, '0', '')
+	FROM employees;
+
+USE the_blunder;
+SELECT *
+	FROM employees;
+
+--ok!
+--I was able to use REPLACE successfully!
+--at least for now.
+--I can move on to the next portion of the problem
+--which I will define the next time I work on this
+
+--datacamp.com/tutotial/sql-replace 
 
