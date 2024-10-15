@@ -219,13 +219,13 @@
 
 --------------REPLACE ( column_name , string_expression , string_patter , string_replacement )
 
-USE the_blunder;
-SELECT REPLACE(Salary, '0', '')
-	FROM employees;
+--USE the_blunder;
+--SELECT REPLACE(Salary, '0', '')
+--	FROM employees;
 
-USE the_blunder;
-SELECT *
-	FROM employees;
+--USE the_blunder;
+--SELECT *
+--	FROM employees;
 
 --ok!
 --I was able to use REPLACE successfully!
@@ -235,3 +235,69 @@ SELECT *
 
 --datacamp.com/tutotial/sql-replace 
 
+-----------------------------------10 14 2024------------------------------
+
+--ok,
+--The next step in the problem is:
+
+-------"she wants your help
+-------finding the difference between
+-------her miscalculation
+-------(using salaries with any zeroes removed),
+
+--ok,
+--so, there it is.
+--I need to find the new average.
+--the new average with any zeroes removed.
+--I have already accomplished removing the zeroes.
+
+--let me get the new average.
+
+--the main thing the worries me right now
+--is how am I going to do all of this on one query?
+
+--ok, I ran the SELECT * FROM employees; query
+--in lines 226 - 228
+--and I forgot that the query 
+--from lines 222 - 224 isn't permanent.
+--I guess I didn't do an UPDATE statement
+--so, it would make sense that the zeroes are
+--still there.
+
+--ok,
+--this makes things easier.
+--I thought I was going to have to reverse the zeroes
+--in case I needed to do it for some reason.
+
+--USE the_blunder;
+--SELECT REPLACE(Salary, '0', '')
+--	FROM employees;
+
+--ok, how do I do a new avg?
+--I think I would need to make the query I copied from 222-224 to 272-274
+--the subquery.
+--and the main query
+--would be the avg function.
+
+USE the_blunder;
+SELECT AVG(Salary)
+	FROM employees
+		WHERE Salary IN
+		(SELECT REPLACE(Salary, '0', '')
+		FROM employees);
+
+--Nice, the new avg is 2701.
+
+--the previous one was.
+--oh man,
+--I would need to do this all in one query?
+--that is a lot right now.
+
+--How would I do that?
+--I think I would need to do two AVG functions in the same 
+--SELECT statement.
+--But obviously, I might need to add a new column.
+--a new column that did the zeroes and one without
+--the zeroes.
+
+--this will be what I do -maybe- tomorrow.
