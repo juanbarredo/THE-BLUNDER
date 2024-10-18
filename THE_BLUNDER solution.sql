@@ -279,12 +279,12 @@
 --and the main query
 --would be the avg function.
 
-USE the_blunder;
-SELECT AVG(Salary)
-	FROM employees
-		WHERE Salary IN
-		(SELECT REPLACE(Salary, '0', '')
-		FROM employees);
+--USE the_blunder;
+--SELECT AVG(Salary)
+--	FROM employees
+--		WHERE Salary IN
+--		(SELECT REPLACE(Salary, '0', '')
+--		FROM employees);
 
 --Nice, the new avg is 2701.
 
@@ -301,3 +301,59 @@ SELECT AVG(Salary)
 --the zeroes.
 
 --this will be what I do -maybe- tomorrow.
+
+----------------------10 17 2024------------------------------------
+
+--ok, I will need to look up how to add a new column.
+--a new column to have the salary with no zeroes.
+
+--it is very interesting how these queries really do need
+--to be broken down into multiple parts
+--and then added together.
+
+--USE the_blunder;
+--ALTER TABLE employees
+--	ADD Salary_no_zeroes INT;
+
+--UPDATE employees
+--	SET Salary_no_zeroes
+--		WHERE Salary IN
+--		(SELECT REPLACE(Salary, '0', '')
+--		FROM employees);
+
+--I am feeling lost.
+
+--Not sure how to copy/paste multiple rows into a new column.
+----------UPDATE table SET columnB = ColumnA;
+
+--Maybe this is what I will do first.
+--copy the column over.  
+--Then I can edit it.
+
+--USE the_blunder;
+--ALTER TABLE employees
+--	ADD Salary_no_zeroes INT;
+
+--SELECT *
+--	FROM employees;
+
+--ok, now let me copy it over.
+
+--UPDATE employees
+--	SET Salary = Salary_with_no_zerores
+--		FROM employees;
+
+SELECT *
+	FROM employees;
+
+--ok, next time.
+--I will work on copying Salary into Salary_with_no_zeroes.
+
+--for some reason.
+
+--That I think I just figured out.
+--I wrote the wrong column name down in line 343.
+
+
+
+
