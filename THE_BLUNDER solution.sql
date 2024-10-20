@@ -343,8 +343,8 @@
 --	SET Salary = Salary_with_no_zerores
 --		FROM employees;
 
-SELECT *
-	FROM employees;
+--SELECT *
+--	FROM employees;
 
 --ok, next time.
 --I will work on copying Salary into Salary_with_no_zeroes.
@@ -354,6 +354,78 @@ SELECT *
 --That I think I just figured out.
 --I wrote the wrong column name down in line 343.
 
+-----------------------------10 20 2024--------------------------------------
+--
+--So, 
+--During this Pomodoro (an uninterrupted 25 minute block of dedicated work time).
+--I am first, going to try and copy/paste into a the new column
+--"Salary_no_zeroes".
 
+--USE the_blunder;
+--UPDATE employees
+--	SET Salary = Salary_no_zeroes
+--		FROM employees;
 
+--USE the_blunder;
+--SELECT *
+--	FROM employees;
 
+--haha, the query from lines 364 - 367
+--copied in the wrong direction?
+
+--it set every row in the Salary column as NULL.
+
+--Now, I have to reverse the error.
+
+--Let's see how long that takes.
+
+--I might have to drop the employees table
+--and re-create it using the import/export wizard.
+
+--I have two directions that I want to take,
+
+--	1. how do I make sure the error doesn't happen again
+--	2. drop the table and go straight to the import/export wizard.
+
+--I think I will go to the second option.
+
+--USE the_blunder;
+--SELECT *
+--	FROM employees;
+
+--ok!
+--Back to square one.
+
+--Now, I need to create the new column again.
+
+--USE the_blunder;
+--ALTER TABLE employees
+--	ADD Salary_no_zeroes INT;
+
+--USE the_blunder;
+--SELECT *
+--	FROM employees;
+
+USE the_blunder;
+UPDATE employees
+	SET Salary_no_zeroes = Salry
+		FROM employees;
+
+USE the_blunder;
+SELECT *
+	FROM employees;
+
+--I tried to reverse the equality
+--But now it is telling me that Salary is an
+--invalid column name?
+
+--I will try to solve this tommorrow.
+
+--ok, got it.
+--I might need to re-use the import/export wizard to correct the column name
+--from "Salry" to "Salary.
+
+--But I learned something new
+--the order of the terms in the equal matter.
+
+--I need better language to describe this.
