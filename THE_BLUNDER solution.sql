@@ -406,14 +406,14 @@
 --SELECT *
 --	FROM employees;
 
-USE the_blunder;
-UPDATE employees
-	SET Salary_no_zeroes = Salry
-		FROM employees;
+--USE the_blunder;
+--UPDATE employees
+--	SET Salary_no_zeroes = Salry
+--		FROM employees;
 
-USE the_blunder;
-SELECT *
-	FROM employees;
+--USE the_blunder;
+--SELECT *
+--	FROM employees;
 
 --I tried to reverse the equality
 --But now it is telling me that Salary is an
@@ -429,3 +429,84 @@ SELECT *
 --the order of the terms in the equal matter.
 
 --I need better language to describe this.
+
+-----------------------------10 22 2024----------------------------
+
+--ok,
+--last time I learned something very valuable
+--that I feel should have been explained previously.
+--maybe I missed it?
+
+--but when using the equal sign.
+--it is A = B means that B will be made equal to A.
+--I figured it would be the other way around.
+
+--Not sure why.
+--ok,
+--I am lookign at the learn.microsoft websire and I see
+--clearly that it is indeed A = B.
+--which will make B equal to B.
+--the order seems counterintuitive in
+--my case.
+
+--But when assigning variables.  
+--it makes perfect sense.
+
+--So,
+--Now the next step is to clear the zeroes
+--from the "Salary_no_zeroes" column.
+
+--I am copying previously developed code from lines 318-322
+
+--USE the_blunder;
+--UPDATE employees
+--	SET Salary_no_zeroes
+--		WHERE Salry IN
+--		(SELECT REPLACE(Salry, '0', '')
+--		FROM employees);
+
+--I will problably go back and re-upload or
+--rename the "Salry" column since
+--It should be "Salary"
+
+--USE the_blunder;
+--SELECT *
+--	FROM employees;
+
+--Right, neverming
+--I first have to change INT to NVARCHAR
+
+--USE the_blunder;
+--SELECT REPLACE(Salary_no_zeroes, '0', '')
+--	FROM employees;
+
+--USE the_blunder;
+--SELECT *
+--	FROM employees;
+
+--ok,
+--here is where I think I got stuck last time.
+--I have to do it all in the same query?
+
+--Because I need to 
+--Well, the results from query in lines 479 - 481
+--need to be updated as the new
+--"Salary_no_zeroes"
+
+--So, I think this will be the new challenge.
+--ok,
+--I guess I need to make:
+
+--USE the_blunder;
+--UPDATE employees
+--SELECT REPLACE(Salary_no_zeroes, '0', '')
+--	SET Salary_no_zeroes = Salry
+--		FROM employees;
+
+--USE the_blunder;
+--SELECT REPLACE(Salary_no_zeroes, '0', '')
+--	FROM employees;
+
+--I may need to do a quick search to see if
+--line 502 can just be slid into the query from
+--lines 500 - 504.
