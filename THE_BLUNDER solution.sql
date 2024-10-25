@@ -510,3 +510,73 @@
 --I may need to do a quick search to see if
 --line 502 can just be slid into the query from
 --lines 500 - 504.
+
+----------------------------10 24 2024---------------------------
+
+--ok,
+--Let's see where I left off
+
+--USE the_blunder;
+--SELECT *
+--	FROM employees;
+
+--ok, I am already at a place where the columns are set
+--I just need to remove the zeroes from one column.
+
+--then, do the AVG of each.
+--then, the difference between both
+
+--------------USE the_blunder;
+--------------UPDATE employees
+--------------SELECT REPLACE(Salary_no_zeroes, '0', '') --this did not work.
+--------------	SET Salary_no_zeroes = Salry
+--------------		FROM employees;
+
+--ok, I am lost.
+
+--USE the_blunder;
+--SELECT REPLACE(Salary_no_zeroes, '0', '')
+--	FROM employees;
+
+--ok, the above query just removes the zeroes but only in this query
+--I need to UPDATE these changes.
+
+--USE the_blunder;
+--SELECT REPLACE(Salary_no_zeroes, '0', '')
+--	FROM employees;
+
+--how can I add the UPDATE
+
+--USE the_blunder;
+--UPDATE employees
+--	SET Salary_no_zeroes = 
+--	(SELECT REPLACE(Salary_no_zeroes, '0', ''))
+--		FROM employees;
+
+USE the_blunder;
+SELECT *
+	FROM employees;
+
+--Amazing, got it.
+--so, without realizing it
+--copying from SQL SHACK
+--I used a subquery.
+
+--I didn't see it as such
+--but after I ran it.
+--it just made sense that that is what it was
+--such a weird place to find
+--a subquery for me
+
+--my understanding of what a subquery is has been collapsed
+--I am open to seeing it elsewhere I feel
+
+--I hope this is true
+
+--the only way is to keep working with SQL
+
+--the article used was
+--sqlshack.com/how-to-update-from-a-select-statement-in-sql-server/
+--very useful.
+
+--I am still blown as to how a subquery snuck in.
