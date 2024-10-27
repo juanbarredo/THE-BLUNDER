@@ -553,9 +553,9 @@
 --	(SELECT REPLACE(Salary_no_zeroes, '0', ''))
 --		FROM employees;
 
-USE the_blunder;
-SELECT *
-	FROM employees;
+--USE the_blunder;
+--SELECT *
+--	FROM employees;
 
 --Amazing, got it.
 --so, without realizing it
@@ -580,3 +580,54 @@ SELECT *
 --very useful.
 
 --I am still blown as to how a subquery snuck in.
+
+------------------------10 27 2024------------------------------------
+
+--USE the_blunder;
+--SELECT *
+--	FROM employees;
+
+--I made huge gains last time.
+--Now, I believe I need to compare the two averages.
+
+--can I do two averages in the same select statement?
+
+--USE the_blunder;
+--SELECT AVG(Salry), AVG(Salary_no_zeroes)
+--	FROM employees;
+
+--ok, the next step is to subtract the two averages
+
+--after that I need to round that difference up to the next integer.
+
+--ok, how do I do subtraction
+
+--USE the_blunder;
+--SELECT AVG(Salry) - AVG(Salary_no_zeroes)
+--	FROM employees;
+
+--Nice, got an answer.
+
+--Now I need to find how to do the rounding up
+--Also, though.
+--I am interested in how this is going to go when I 
+--have to put these together.
+
+--already just this AVG rounding is going to be a lot I think
+
+USE the_blunder;
+SELECT ROUND( AVG (Salry) - AVG (Salary_no_zeroes) , 0 )
+	FROM employees;
+
+--Ok, I got the rounding done.
+
+--I think this is the final answer.
+--but now I need to do it all in one query.
+
+--hmm...I will try to work on this tomorrow
+
+--I may have to drop the current table.
+--then, re-upload it using the import/export wizard.
+--after that make sure to label the columns correctly
+--then really lots of careful organizing.
+
