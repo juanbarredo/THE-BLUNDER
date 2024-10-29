@@ -615,9 +615,9 @@
 
 --already just this AVG rounding is going to be a lot I think
 
-USE the_blunder;
-SELECT ROUND( AVG (Salry) - AVG (Salary_no_zeroes) , 0 )
-	FROM employees;
+--USE the_blunder;
+--SELECT ROUND( AVG (Salry) - AVG (Salary_no_zeroes) , 0 )
+--	FROM employees;
 
 --Ok, I got the rounding done.
 
@@ -631,3 +631,71 @@ SELECT ROUND( AVG (Salry) - AVG (Salary_no_zeroes) , 0 )
 --after that make sure to label the columns correctly
 --then really lots of careful organizing.
 
+-------------------------------10 28 2024------------------------------------------
+
+--Alright,
+--tonight I will try to 
+-----1. drop the employees table.
+-----2. upload the employees table with correct spelling to columns.
+-----3.
+
+--USE the_blunder;
+--DROP TABLE employees;
+
+--USE the_blunder;
+--SELECT *
+--	FROM employees;
+
+--employees table has been successfully DROPPED.
+
+--I will now use the import/export wizard.
+
+--object explorer --> databases --> the_blunder --> 
+
+--USE the_blunder;
+--SELECT *
+--	FROM employees;
+
+--ok, I have accomplished the two tasks.
+
+--Now, I want to start the third task.
+--overall, it is to put all of this through one select statement?
+--well, maybe two select statemens.
+
+--USE the_blunder;
+--UPDATE employees
+--	SET Salary_withno_zeroes
+--		WHERE Salary IN
+--		(SELECT REPLACE(Salary, '0', '')
+--		FROM employees);
+
+--ok, the above query in one go adds the new column
+--and replaces the zeroes in the new row.
+
+--next, I need to do the avg
+
+--USE the_blunder;
+--SELECT ROUND( AVG (Salary) - AVG (Salary_withno_zeroes) , 0 )
+--	FROM employees;
+
+--Msg 156, Level 15, State 1, Line 668
+--Incorrect syntax near the keyword 'WHERE'.
+
+--ok, I copied the wrong query.
+
+--USE the_blunder;
+--UPDATE employees
+--	SET Salary_withno_zeroes = 
+--	(SELECT REPLACE(Salary_withno_zeroes, '0', ''))
+--		FROM employees;
+
+--USE the_blunder;
+--SELECT ROUND( AVG (Salary) - AVG (Salary_withno_zeroes) , 0 )
+--	FROM employees;
+
+--ok, query from lines 686 to 690 assumes that 
+--the column 'Salary_withno_zeroes' has 
+--already been added.
+
+--Next time I work on this I will fish out the query to add 
+--'Salary_withno_zeroes'.
