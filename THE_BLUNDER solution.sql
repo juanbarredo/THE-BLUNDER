@@ -699,3 +699,48 @@
 
 --Next time I work on this I will fish out the query to add 
 --'Salary_withno_zeroes'.
+
+--------------------------10 30 2024----------------------
+
+--USE the_blunder;
+--ALTER TABLE employees
+--	ADD Salary_no_zeroes INT;
+
+--ok,
+--I will now add the query which will add the 
+--'Salary_withno_zeroes' column to the 
+--employees table.
+
+--USE the_blunder;
+--ALTER TABLE employees
+--	ADD Salary_withno_zeroes INT;
+--GO--AGAIN, GO SOLVES SOMETHING I DON'T GET.
+--USE the_blunder;
+--UPDATE employees
+--	SET Salary_withno_zeroes = 
+--	(SELECT REPLACE(Salary, '0', ''))
+--		FROM employees;
+--GO
+--USE the_blunder;
+--SELECT ROUND( AVG (Salary) - AVG (Salary_withno_zeroes) , 0 )
+--	FROM employees;
+
+--ok, the above code is not giving the right answer.
+
+--I am going to have to look at the averages?
+--then see why the math I am getting is not adding up?
+--yeah,
+--like,
+--in the explanation.  Samantha is calculating a very low average salary
+--but it should be the higher since it includes zeroes.
+--I am missing something small.
+
+USE the_blunder;
+SELECT *
+	FROM employees;
+
+--Ok, I am forgetting one step.
+--the step to copy the columns Salary into 
+--Salary_withno_zeroes.
+
+--Hmm..
