@@ -784,3 +784,8 @@ SELECT CEILING( AVG (Salary) - AVG (Salary_withno_zeroes))
 --for now, there is a new column added.
 --next I need to see if I can get the next step working
 --the next step being to add the salary with no zeroes.
+--ok,
+--next step also worked.
+
+--ok, I got the whole thing to run but it is still giving me wrong answer?
+--I can't imagine what the issue is.
