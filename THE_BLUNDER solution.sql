@@ -735,12 +735,52 @@
 --but it should be the higher since it includes zeroes.
 --I am missing something small.
 
-USE the_blunder;
-SELECT *
-	FROM employees;
+--USE the_blunder;
+--SELECT *
+--	FROM employees;
 
 --Ok, I am forgetting one step.
 --the step to copy the columns Salary into 
 --Salary_withno_zeroes.
 
 --Hmm..
+
+-------------------------------11 03 2024----------------------------------
+
+--Ok, seems I had something backwards.
+
+--Samantha's row was the row without zeroes from the get go.
+--I thought it.  Yeah, makes more sense.
+
+--I should be able to find my way to the right solution with the
+--queries I built.
+
+--ok, looking at the average, it is exactly the function that needs to be run
+
+--I am thinking now that it is due to the way I am handling rounding up.
+
+--I think what I need to replace is ROUND() with CEILING().
+
+--USE the_blunder;
+--ALTER TABLE employees
+--	ADD Salary_withno_zeroes INT;
+--GO--AGAIN, GO SOLVES SOMETHING I DON'T GET.
+--USE the_blunder;
+--UPDATE employees
+--	SET Salary_withno_zeroes = 
+--	(SELECT REPLACE(Salary, '0', ''))
+--		FROM employees;
+--GO
+USE the_blunder;
+SELECT CEILING( AVG (Salary) - AVG (Salary_withno_zeroes))
+	FROM employees;
+
+--ok, I am getting a weird message in the hackerrank.com answer box-spot.
+
+--I will need to work on this more maybe tomorrow.
+
+--I guess I may need to go step by step.
+--slowly add each query and see the results.
+--for now, there is a new column added.
+--next I need to see if I can get the next step working
+--the next step being to add the salary with no zeroes.
