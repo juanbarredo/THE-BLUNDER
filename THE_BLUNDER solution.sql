@@ -789,3 +789,35 @@ SELECT CEILING( AVG (Salary) - AVG (Salary_withno_zeroes))
 
 --ok, I got the whole thing to run but it is still giving me wrong answer?
 --I can't imagine what the issue is.
+
+-------------------------11 04 2024-------------------------------------------
+
+--ok,
+
+--I am very lost
+
+--what can I do then?
+
+--can I re-read the problem?
+
+--is it in the NULL count?
+
+--Am I forgetting to cast it first as a string?
+
+--the main thing is that I don't know why.
+--let me see the why.
+
+
+--ok, I guess next time I work on this problem
+--I will work on CASTING.
+
+--I think the main issue is that REPLACE() uses strings.
+
+--I think that is the main issue.
+
+--But I can work with it still because of implicit conversions?
+
+--so, I think this is where there can be the trick where they place a trap
+--that can only be caught if they add.
+
+--or I am using the REPLACE() function wrong?
