@@ -17,7 +17,7 @@
 
 --Samantha was tasked
 --with calculating the average
---monthly salries
+--monthly salaries
 --for all employees
 --in the employees table.
 ------------------I might want to just recreate her answer from the get go.
@@ -771,9 +771,9 @@
 --	(SELECT REPLACE(Salary, '0', ''))
 --		FROM employees;
 --GO
-USE the_blunder;
-SELECT CEILING( AVG (Salary) - AVG (Salary_withno_zeroes))
-	FROM employees;
+--USE the_blunder;
+--SELECT CEILING( AVG (Salary) - AVG (Salary_withno_zeroes))
+--	FROM employees;
 
 --ok, I am getting a weird message in the hackerrank.com answer box-spot.
 
@@ -821,3 +821,43 @@ SELECT CEILING( AVG (Salary) - AVG (Salary_withno_zeroes))
 --that can only be caught if they add.
 
 --or I am using the REPLACE() function wrong?
+
+--------------------------------11 05 2024-----------------------------------------------
+
+--ok,
+
+--today I want to explore
+--but I also want to rush to use the CAST() function.
+
+--I think that I don't need it because according to the explanations I have
+--seen regarding implicit and explicit conversions.
+
+-------VARCHAR and INT are interchangeable!
+-------or that there is an implicit conversion between them
+-------
+--so, should I even bother but I did see at first that some of the posted answers
+--in the discussion to the problem were to use CAST()
+
+--it just seems
+
+--USE the_blunder;
+--ALTER TABLE employees
+--	ADD Salary_withno_zeroes INT;
+--GO--AGAIN, GO SOLVES SOMETHING I DON'T GET.
+--USE the_blunder;
+--UPDATE employees
+--	SET Salary_withno_zeroes = 
+--	(SELECT REPLACE(Salary, '0', ''))
+--		FROM employees;
+--GO
+USE the_blunder;
+SELECT CEILING( AVG (Salary) - AVG (Salary_withno_zeroes))
+	FROM employees;
+
+--So, I am checking as many things as I can come up with
+--I am looking at the answers posted and mine should work.
+--why isn't it working?
+
+--it should work
+
+--it may not like how longwinded my answer is?
