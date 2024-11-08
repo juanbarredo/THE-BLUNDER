@@ -861,3 +861,48 @@ SELECT CEILING( AVG (Salary) - AVG (Salary_withno_zeroes))
 --it should work
 
 --it may not like how longwinded my answer is?
+
+--------------------------11 07 2024---------------------------------
+
+--so tonight I am going to copy/paste answers into the hackerrank solution
+
+--ok, I found the original one which lead me to the path I am on
+
+--I need to get how parentheses work
+
+--SELECT CEILING(AVG(Salary) - AVG(REPLACE(Salary,'0','') AS DECIMAL)))
+--FROM employees;
+
+--ok, so even the above answer is being rejected?
+
+--I will copy
+
+--I copied a few down the line and they all gave me the wrong answer?
+
+--ok,
+
+--I copied an anwer that finally worked
+--but it worked in MySQL
+
+--I will have to sudy it
+--SELECT CEIL(AVG(CAST(Salary AS DECIMAL(10,2))) - AVG(REPLACE(Salary, '0','')))
+----FROM employees;
+
+--so, do I have to turn into DECIMAL, my code?
+
+--CASTing Salary as DECIMAL
+
+--I think I also have to get used to this nesting of functions.
+--in what order are they executed?
+
+--USE the_blunder;
+--SELECT *
+--	FROM employees;
+
+--it doesn't make sense to me why DECIMAL has to be (10,2)
+
+--I will try different configurations 
+--and see which work next time I work on this problem
+
+--I am very confused by the use of DECIMAL
+--this is a very hard problem for me.
