@@ -906,3 +906,43 @@ SELECT CEILING( AVG (Salary) - AVG (Salary_withno_zeroes))
 
 --I am very confused by the use of DECIMAL
 --this is a very hard problem for me.
+
+----------------------------11 10 2024---------------------------------
+
+--spent the first few minutes of this pomodoro on ayoa
+--I want to see if I can download mindmaps made on ayoa.com
+--to github
+
+--ayoa offers a lot of download format options.
+
+--so, I am going to start adding mindmaps on the next problem that I work on
+--I believe this will allow me to navigate previous actions better
+
+--moving on,
+--I will now work on the DECIMAL() because it seems to lend itself
+--to approximation.
+
+--nested functions
+--looking really quickly,
+--I am not getting the answer I am
+--looking for
+
+--ok,
+--I have reached the end of my time and I must begin to conclude.
+
+--I have learned that I need to spend this time
+--the time to look on what to do next
+
+--I have learned that I need to focus one pomodoro on the DECIMAL() function
+
+--and I need to maybe also spend a full pomodoro on the limits of nested functions in the select statement
+--which seems very weird at the moment
+--i don't think I have the correct language to describe my mis-underestanding.
+
+--yeah, i need to run the function with multiple inputs 
+--in the github screen
+
+--I also saw that I can just download.  like
+--github offers it in a download file
+--next problem, 
+--I will also do that.
