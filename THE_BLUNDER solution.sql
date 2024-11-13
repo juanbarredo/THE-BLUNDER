@@ -850,9 +850,9 @@
 --	(SELECT REPLACE(Salary, '0', ''))
 --		FROM employees;
 --GO
-USE the_blunder;
-SELECT CEILING( AVG (Salary) - AVG (Salary_withno_zeroes))
-	FROM employees;
+--USE the_blunder;
+--SELECT CEILING( AVG (Salary) - AVG (Salary_withno_zeroes))
+--	FROM employees;
 
 --So, I am checking as many things as I can come up with
 --I am looking at the answers posted and mine should work.
@@ -946,3 +946,37 @@ SELECT CEILING( AVG (Salary) - AVG (Salary_withno_zeroes))
 --github offers it in a download file
 --next problem, 
 --I will also do that.
+
+---------------------------------11 12 2024--------------------------------------
+
+--I want to practice using the DECIMAL() function tonight.
+
+--seems the code doesn't want to work on hackerrank
+--I will try it here
+
+--SELECT CEILING(AVG(CAST(Salary AS DECIMAL(10,2))) - AVG(CAST(REPLACE(Salary, '0','')) AS DECIMAL(10,2)))
+--FROM employees;
+
+--SELECT *
+--	FROM employees;
+
+--I have been taken for a ride
+--nothing I tried worked tonight
+--not even sure why since they did work Sunday.
+
+--I will try again Thursday.
+
+--Not sure what I will do Thursday
+--but I learned a great way to debug 
+--is to separate by function or clause to break in a new line.
+
+--this is to debug
+
+--I am unsure now the last error I was getting was that AVG can't work on VARCHAR but well,
+--I wasn't CASTING previously
+
+--I am unsure but I just tried a few things.
+--right now my best guess is that I am messing up 
+--the parentheses.
+
+--I will just go back to solving my way.
