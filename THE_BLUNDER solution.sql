@@ -980,3 +980,70 @@
 --the parentheses.
 
 --I will just go back to solving my way.
+
+----------------------------11 17 2024-------------------------------
+
+--ok,
+
+--I need to copy paste my code below and start adding what I think is missing.
+--mainly the casting as a decimal.
+
+--but the casting is weird.
+
+--USE the_blunder;
+--ALTER TABLE employees
+--	ADD Salary_withno_zeroes INT;
+--GO--AGAIN, GO SOLVES SOMETHING I DON'T GET.
+--USE the_blunder;
+--UPDATE employees
+--	SET Salary_withno_zeroes = 
+--	(SELECT REPLACE(Salary, '0', ''))
+--		FROM employees;
+--GO
+--USE the_blunder;
+--SELECT CEILING( AVG (Salary) - AVG (Salary_withno_zeroes))
+--	FROM employees;
+
+--SELECT CEILING(25.75);
+
+--So, I am just confused as to why my method doesn't work
+
+--ok, I am finding a website with some amazing information attached
+--I think that AVG cuts down the precision of the answer.
+--which may give a wrong answer.
+
+--so, according to this website
+
+--w3resource.com/sql/aggregate-functions/avg-decimal-places-using-cast-within-avg.php
+
+--The SQL ACG() function retunrs the average value with default decimal places.
+--The CAST() is used to increase or decrease the decmal places of a value.
+--The CAST() function is much better at preserving the decimal places when converting
+--decimal and numeric data types.
+--The AS DECIMAL followed by the format specification is used
+--with CAST() for making a numeric value to a specific decimal place value.
+
+--ok, I need to follow the Syntax:
+
+--CAST [ expression ]
+--AS [ data_type ] [ specified_format ];
+
+--I am still confused about the DECIMAL(X1, X2)
+
+--Seems X1 is the length or the precision
+--and X2 is the scale?
+
+--I have never heard of scale before.
+
+USE the_blunder;
+SELECT  CEILING(CAST ( AVG (Salary) - AVG (Salary_withno_zeroes) AS DECIMAL(7,3)))
+	FROM employees;
+
+SELECT *
+	FROM employees;
+
+--So right now,
+--I am just unsure where to get the scale from.
+
+--Was that stated in the problem somewhere.
+--next time I will look into that.
