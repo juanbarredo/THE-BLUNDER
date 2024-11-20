@@ -1035,15 +1035,59 @@
 
 --I have never heard of scale before.
 
-USE the_blunder;
-SELECT  CEILING(CAST ( AVG (Salary) - AVG (Salary_withno_zeroes) AS DECIMAL(7,3)))
-	FROM employees;
+--USE the_blunder;
+--SELECT  CEILING(CAST ( AVG (Salary) - AVG (Salary_withno_zeroes) AS DECIMAL(7,3)))
+--	FROM employees;
 
-SELECT *
-	FROM employees;
+--SELECT *
+--	FROM employees;
 
 --So right now,
 --I am just unsure where to get the scale from.
 
 --Was that stated in the problem somewhere.
 --next time I will look into that.
+
+--------------------------------11 19 2024------------------------------------
+
+--alright,
+--I will start by rereading the problem to look for clues regarding precision that would require DECIMAL(10,2)
+
+--USE the_blunder;
+--SELECT *
+--	FROM employees;
+
+	--so, why not 
+	--how does DECIMAL() work again?
+
+USE the_blunder;
+SELECT  CEILING(CAST ( AVG (Salary) - AVG (Salary_withno_zeroes) AS DECIMAL(5,2)))
+	FROM employees;
+
+	--ok, why do some combinations fail?
+
+--but the only clue is that they are asking for "round it up to the next integer."
+
+--for some reason I am unable to figure out the next step
+
+--I need to just pick a direction.
+--I will pick
+--check the error on google
+
+--ok, 
+--great answer from Joe in stackoverflow.com
+
+--"Numeric defines the TOTAL number of digits, and then the number after the decimal."
+
+--"A numeric(3,2) can only hold up to 9.99" --Joe
+
+--I am then thinking that it has to be 2 most often and then the digits in the awkward direction
+--they have set up this function.
+
+--so there is no magic to it.
+
+--I think next time I will be just testing submissions.
+
+--I should be able to get it unless I need to look more into CAST().
+
+
