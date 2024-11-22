@@ -1060,9 +1060,9 @@
 	--so, why not 
 	--how does DECIMAL() work again?
 
-USE the_blunder;
-SELECT  CEILING(CAST ( AVG (Salary) - AVG (Salary_withno_zeroes) AS DECIMAL(5,2)))
-	FROM employees;
+--USE the_blunder;
+--SELECT  CEILING(CAST ( AVG (Salary) - AVG (Salary_withno_zeroes) AS DECIMAL(5,2)))
+--	FROM employees;
 
 	--ok, why do some combinations fail?
 
@@ -1090,4 +1090,20 @@ SELECT  CEILING(CAST ( AVG (Salary) - AVG (Salary_withno_zeroes) AS DECIMAL(5,2)
 
 --I should be able to get it unless I need to look more into CAST().
 
+------------------------------------11 21 2024---------------------------------
+--ok,
+--I am going to attempt to submit answers to hackerrank.com
 
+--this is really annoying
+--the same query that gives me answers on this program isn't working
+--in HACKERRANK.COM
+
+--it is in MS SQL SERVER mode on hackerrank.com
+--there should be no problem.
+
+--dang it
+--I thkn the main problem is that maybe after each semicolon
+
+--can't believe it
+--i have no idea
+--I may have to shift the way I answer to never have to create a new column.
