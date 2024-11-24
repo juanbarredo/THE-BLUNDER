@@ -1107,3 +1107,41 @@
 --can't believe it
 --i have no idea
 --I may have to shift the way I answer to never have to create a new column.
+
+--------------------------11 24 2024-----------------------------------
+--I believe I have this problem soved
+--just the hackerrank.com interface doesn't like the way I word it?
+
+--I think I will then try to use the way that the answeres were submitted.
+--which I don't like.
+--it currently isn't my style
+--and I don't know where to go to get an assesment on my problems with hackerrank
+
+--it works on here, in this interface.
+
+--why not there?
+
+--ok, I am workshopping an answer through the hackerrank interface first
+
+USE the_blunder;
+SELECT AVG(REPLACE(Salary, '0', '') AS DECIMAL(6,2)) --ok, so yeah.  there is an implicit conversion between INT and VARCHAR
+	FROM employees;
+
+--the error caused by line 1127 is very satisfying to me at the moment.
+
+--ok, so I do need to CAST as a DECIMAL 
+--the next thing I need to work on is how the order of operations happens
+--within the SELECT statement.
+
+--DANG IT,
+--time is almost up again.
+--but apparently I need to change my closing parentheses?
+
+--this is so weird and makes me want to look at yeah.
+--this awkward order of operations in the SELECT statement.
+--I try and look it up on Google but I get just order of execution of
+--all clauses and such.  so, that WHERE is 7th or whatever.  FROM is first, etc.
+
+--ok, so I think the next step to tackle is the DECIMAL
+
+
