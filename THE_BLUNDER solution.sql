@@ -1123,9 +1123,9 @@
 
 --ok, I am workshopping an answer through the hackerrank interface first
 
-USE the_blunder;
-SELECT AVG(REPLACE(Salary, '0', '') AS DECIMAL(6,2)) --ok, so yeah.  there is an implicit conversion between INT and VARCHAR
-	FROM employees;
+--USE the_blunder;
+--SELECT AVG(REPLACE(Salary, '0', '') AS DECIMAL(6,2)) --ok, so yeah.  there is an implicit conversion between INT and VARCHAR
+--	FROM employees;
 
 --the error caused by line 1127 is very satisfying to me at the moment.
 
@@ -1143,5 +1143,61 @@ SELECT AVG(REPLACE(Salary, '0', '') AS DECIMAL(6,2)) --ok, so yeah.  there is an
 --all clauses and such.  so, that WHERE is 7th or whatever.  FROM is first, etc.
 
 --ok, so I think the next step to tackle is the DECIMAL
+
+-------------------------11 25 2024-----------------------------------------
+--ok!
+
+--tonight I will work on getting to know the DECIMAL or CASTING or AVG functions?
+
+--I think the main one is CAST() and then the DECIMAL() clarifies it.
+
+--so, I think right now I am missing the CAST() function in the SELECT statement in line 1127.
+
+--let me try that really quick.
+
+--USE the_blunder;
+--SELECT AVG(CAST(REPLACE(Salary, '0', '') AS DECIMAL(6,2))) --ok, so yeah.  there is an implicit conversion between INT and VARCHAR
+--	FROM employees;
+
+--Great!
+
+--I got an answer but it is coming out as "1794.500000"
+
+--I thought the purpose of the DECIMAL() was to control this?
+
+--ok, for now I want to move on and add the rest of the query.
+
+--USE the_blunder;
+--SELECT CEILING(AVG(Salary) - AVG(CAST(REPLACE(Salary, '0', '') AS DECIMAL(6,2)))) --ok, so yeah.  there is an implicit conversion between INT and VARCHAR
+--	FROM employees;
+
+--that was weird.
+
+--the query in lines 1170 to 1172 isn't giving me the right answer but it is correct?
+--what else would I need to adjust?
+
+--ok,
+--finally got it.
+
+--hate how I got it but I got it.
+--I had to CAST(Salary AS DECIMAL(6,2)) 
+
+USE the_blunder;
+SELECT CEILING(AVG(CAST(Salary AS DECIMAL(6,2))) - AVG(CAST(REPLACE(Salary, '0', '') AS DECIMAL(6,2)))) --ok, so yeah.  there is an implicit conversion between INT and VARCHAR
+	FROM employees;
+
+--This is insane.
+
+--the level of precision I had to invoke to get this done is a lot.
+
+--I am satisfied because I managed to work through it extensively
+--extensively indeed.
+
+--lessons learned:
+
+--yeah, being consistent is more important than being inspired.
+
+--it took me 1187 lines of work to solve this "easy" problem.
+--well, I do need the practice.
 
 
